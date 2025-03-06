@@ -40,7 +40,7 @@ Currently, this repository is for personal projects, but if you'd like to sugges
 
 For any queries or collaborations, feel free to connect with me:
 
-- GitHub: [@aadi-09](https://github.com/aadi-09)
+- GitHub: [@aadi-09](https://github.com/aaditya-dubey09)
 - LinkedIn: [Click Here](https://linkedin.com/in/aadityadubey)
 - Portfolio: [Click Here](https://aadityadubey.netlify.app)
 
