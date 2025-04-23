@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Modern Todo App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-check-circle"></i> TaskFlow</h1>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="add-todo">
+            <input type="text" id="todoInput" placeholder="Add a new task..." autocomplete="off">
+            <div class="priority-dropdown">
+                <div class="selected-priority" id="selectedPriority">
+                    <span class="priority-indicator none"></span>
+                    <span>No priority</span>
+                </div>
+                <div class="priority-options" id="priorityOptions">
+                    <div class="priority-option" data-priority="none">
+                        <span class="priority-indicator none"></span>
+                        <span>No priority</span>
+                    </div>
+                    <div class="priority-option" data-priority="low">
+                        <span class="priority-indicator low"></span>
+                        <span>Low</span>
+                    </div>
+                    <div class="priority-option" data-priority="medium">
+                        <span class="priority-indicator medium"></span>
+                        <span>Medium</span>
+                    </div>
+                    <div class="priority-option" data-priority="high">
+                        <span class="priority-indicator high"></span>
+                        <span>High</span>
+                    </div>
+                </div>
+            </div>
+            <button class="add-button" id="addButton">
+                <i class="fas fa-plus"></i> Add
+            </button>
+        </div>
+
+        <div class="todos-container">
+            <div class="filters">
+                <div class="filter-options">
+                    <button class="filter-button active" data-filter="all">All</button>
+                    <button class="filter-button" data-filter="active">Active</button>
+                    <button class="filter-button" data-filter="completed">Completed</button>
+                </div>
+                <div class="sort-options">
+                    <span>Sort by:</span>
+                    <button class="sort-button" data-sort="date">
+                        Date <i class="fas fa-arrow-down"></i>
+                    </button>
+                    <button class="sort-button" data-sort="priority">
+                        Priority <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+
+            <ul class="todo-list" id="todoList">
+                <!-- Todo items will be added here -->
+            </ul>
+
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-clipboard-list fa-3x" style="color: var(--gray-300); margin-bottom: 1rem;"></i>
+                <h3>No tasks yet</h3>
+                <p>Add a new task to get started</p>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalTasks">0</div>
+                <div class="stat-label">Total Tasks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completedTasks">0</div>
+                <div class="stat-label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="remainingTasks">0</div>
+                <div class="stat-label">Remaining</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer">
+        <!-- Toast notifications will be added here -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
