@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Calorie Counter</title>
+  </head>
+  <body>
+
+    <main>
+      
+      <h1><button class="button" data-text="Awesome">
+    <span class="actual-text">Calorie Counter</span>
+    <span aria-hidden="true" class="hover-text">Calorie Counter</span>
+</button></h1>
+
+      <div class="container">
+        <form id="calorie-counter">
+          <label for="budget">Budget</label>
+          <input
+            type="number"
+            min="0"
+            id="budget"
+            placeholder="Daily calorie budget..."
+            required
+          />
+          <fieldset id="breakfast">
+            <legend>Breakfast</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="lunch">
+            <legend>Lunch</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="dinner">
+            <legend>Dinner</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="snacks">
+            <legend>Snacks</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="exercise">
+            <legend>Exercise</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <div class="controls">
+            <span>
+              <label for="entry-dropdown">Add food or exercise:</label>
+              <select id="entry-dropdown" name="options">
+                <option value="breakfast" selected>Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snacks">Snacks</option>
+                <option value="exercise">Exercise</option>
+              </select>
+              <button type="button" id="add-entry" class="control-buttons">Add Entry</button>
+            </span>
+          </div>
+
+            <div class="tooltip">
+            <button class="control-buttons" type="submit">
+              Calculate Remaining Calories
+            </button>
+            <button type="button" id="clear" class="control-buttons">Clear</button>
+            
+  <button type="button" aria-label="trigger" class="sizer trigger">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="sizer heart"
+      viewBox="0 0 256 256"
+      stroke-width="0"
+      fill="currentColor"
+      stroke="currentColor"
+    >
+      <path
+        opacity="0.2"
+        class="fill"
+        d="M232,102c0,66-104,122-104,122S24,168,24,102A54,54,0,0,1,78,48c22.59,0,41.94,12.31,50,32,8.06-19.69,27.41-32,50-32A54,54,0,0,1,232,102Z"
+      ></path>
+      <path
+        d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"
+      ></path>
+    </svg>
+
+    <svg class="sizer checkround" viewBox="0 0 44 44">
+      <path
+        transform="translate(-2.000000, -2.000000)"
+        d="M 39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758"
+      ></path>
+    </svg>
+  </button>
+
+  <div class="content">
+    Like <span data-decrease="335" data-increase="336"></span>
+  </div>
+</div>
+        </form>
+        <div id="output" class="output hide"></div>
+      </div>
+
+      <!-- From Uiverse.io by LightAndy1
+<div class="tooltip-container">
+  <span class="tooltip2">Discover</span>
+  <span class="text">
+    <div class="borde-back">
+      <div class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          class="bi bi-discord"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </span>
+</div>
+
+      <footer>
+        <p>Created by Aaditya</p>
+      </footer> -->
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
