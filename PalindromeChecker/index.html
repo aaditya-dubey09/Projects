@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Palindrome Checker</h1>
+        <p class="subtitle">Enter a word or phrase to check if it reads the same forwards and backwards!</p>
+        
+        <div class="input-group">
+            <input type="text" id="text-input" placeholder="Enter text to check..." />
+        </div>
+        
+        <button id="check-btn">Check Palindrome</button>
+        
+        <div id="result"></div>
+        
+        <div class="examples">
+            <h3>Try these examples:</h3>
+            <div class="example" onclick="fillInput('racecar')">racecar</div>
+            <div class="example" onclick="fillInput('A man, a plan, a canal. Panama')">A man, a plan, a canal. Panama</div>
+            <div class="example" onclick="fillInput('race car')">race car</div>
+            <div class="example" onclick="fillInput('never odd or even')">never odd or even</div>
+            <div class="example" onclick="fillInput('hello world')">hello world</div>
+            <div class="example" onclick="fillInput('0_0 (: /-\\ :) 0-0')">0_0 (: /-\\ :) 0-0</div>
+        </div>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div class="alert-overlay" id="alert-overlay">
+        <div class="alert-box">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-title">Oops!</div>
+            <div class="alert-message" id="alert-message">Please input a value</div>
+            <button class="alert-button" onclick="closeAlert()">Got it!</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
