@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="A simple music player project with a playlist, featuring animations and custom styles."
+    />
+
+    <meta
+      name="keywords"
+      content="music player, playlist, animations, custom styles"
+    />
+
+    <meta name="author" content="Aaditya" />
+
+    <link rel="icon" href="assets/logo.png" type="image/png+xml" />
+
+    <title>Audora</title>
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="ambient-bg">
+      <div class="ambient-bg">
+        <div class="ambient-bg-half1"></div>
+
+        <div class="ambient-bg-half2"></div>
+
+        <div class="ambient-bg-half3"></div>
+
+        <div class="ambient-bg-half4"></div>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="button type--C">
+          <div class="button__line"></div>
+
+          <div class="button__line"></div>
+
+          <span class="button__text">AUDORA</span>
+
+          <div class="button__drow1"></div>
+
+          <div class="button__drow2"></div>
+        </a>
+      </div>
+    </nav>
+
+    <div class="music-player">
+      <div class="album-art" id="albumArt">
+        <span>🎵</span>
+      </div>
+
+      <div class="song-info">
+        <div class="song-title" id="songTitle">Midnight Dreams</div>
+
+        <div class="artist-name" id="artistName">Luna Sound</div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" id="progressBar">
+          <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="time-info">
+          <span id="currentTime">0:00</span>
+
+          <span id="duration">3:42</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="control-btn small" id="prevBtn">⏮</button>
+
+        <button class="control-btn play-pause-btn" id="playPauseBtn">▶</button>
+
+        <button class="control-btn small" id="nextBtn">⏭</button>
+      </div>
+
+      <div class="volume-container">
+        <div class="volume-icon">🔊</div>
+
+        <input
+          type="range"
+          class="volume-slider"
+          id="volumeSlider"
+          min="0"
+          max="100"
+          value="70"
+        />
+      </div>
+
+      <div class="playlist" id="playlist">
+        <div class="playlist-item active" data-index="0"></div>
+      </div>
+
+      <div class="button-container">
+        <button type="button" class="btn-base btn-linkedin">LinkedIn</button>
+
+        <button type="button" class="btn-base btn-github">GitHub</button>
+
+        <button type="button" class="btn-base btn-instagram">Instagram</button>
+
+        <button type="button" class="btn-base btn-twitter">Twitter</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
