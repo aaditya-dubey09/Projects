@@ -1,0 +1,434 @@
+:root {
+  --primary-color: #7236ab;
+  --secondary-color: #b41f1f;
+  --background-color: #000000;
+  --footer-color: #1c1b1b;
+  --text-color: #ebe5e5;
+  --border-color: #e0e0e0;
+  --hover-color: #39373793;
+  --header-text-font: "Alumni Sans SC", sans-serif;
+  --font-family: "Arial", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+nav {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0.5em 1em;
+  box-shadow: 0px 0px 10px 0px rgba(26, 23, 27, 0.967);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--font-family);
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5em 1em;
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  z-index: 1;
+  transition: border-radius 1s, background 0.5s;
+}
+
+nav a:hover {
+  border-radius: 50px;
+}
+
+.bottom-left-shade {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80vw;
+  height: 80vw;
+  background: radial-gradient(
+      circle at 60% 60%,
+      #2c013d 0%,
+      #000000 60%,
+      transparent 100%
+    ),
+    radial-gradient(
+      circle at 60% 60%,
+      #2c013d 0%,
+      #000000 60%,
+      transparent 100%
+    );
+  border-radius: 50%;
+  opacity: 0.45;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+nav a::before,
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+}
+
+nav a::before {
+  left: -5px;
+  background: #240046;
+}
+
+nav a::after {
+  right: -5px;
+  background: #5a189a;
+}
+
+nav a:hover::before,
+nav a:hover::after {
+  width: 58%;
+}
+
+nav a:hover span {
+  transition: 0.3s;
+}
+
+nav a span {
+  transition: all 0.3s ease-in;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(180deg, #16001f, #000000);
+}
+
+h1 {
+  font-size: 5.5em;
+  background: linear-gradient(35deg, #ffb300, #ff8000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: lighter;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(84, 54, 24, 0.5);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-family: var(--header-text-font);
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.2em;
+}
+
+.tagline {
+    font-size: 2.5em;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 10px;
+    font-family: var(--font-family);
+    font-weight: 300;
+}
+
+.arc {
+  position: relative;
+  width: 50%;
+  height: 5px;
+  background: linear-gradient(180deg, #44015f, #9f23ed, transparent 100%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2.5rem 0 2rem 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 32px 0 rgba(78, 140, 255, 0.08);
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  text-align: justify;
+}
+.hero-content {
+  flex: 1 1 320px;
+  max-width: 500px;
+}
+.hero-content h2 {
+  font-family: "Alumni Sans SC", sans-serif;
+  font-size: 3.5rem;
+  color: #4e8cff;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+.cta-button {
+  display: inline-block;
+  padding: 0.7em 1.6em;
+  background: #651ad0;
+  color: var(--text-color);
+  border-radius: 2em;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgb(40, 40, 41);
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: #2563eb;
+}
+
+.features {
+    font-size: 1rem;
+    gap: 8rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    font-family: var(--font-family);
+}
+
+h2 {
+    font-size: xx-large;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+
+.features h2, .features p {
+  width: auto;
+  flex-shrink: 1;
+  margin: 0;
+  text-align: right;
+}
+
+.feature-container {
+  right: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  flex-shrink: 0;
+  margin-left: 40px;
+}
+
+.feature-container .glass {
+  position: relative;
+  width: 120px;
+  height: 150px;
+  background: linear-gradient(#fff2, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  margin: 0 -45px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transform: rotate(calc(var(--r) * 1deg));
+}
+
+.feature-container:hover .glass {
+  transform: rotate(0deg);
+  margin: 0 10px;
+}
+
+.feature-container .glass::before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.feature-container .glass svg {
+  font-size: 2.5em;
+  fill: #fff;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.button-container {
+  display: flex;
+  background: linear-gradient(45deg, #16001f, #000000);
+  width: 250px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+    rgba(41, 4, 60, 0.341) 5px 10px 15px;
+  transition: all 0.5s;
+  z-index: 1000;
+}
+.button-container:hover {
+  width: 300px;
+  transition: all 0.5s;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+
+/* Footer Banner */
+.footer-banner {
+  width: 100%;
+  background: linear-gradient(90deg, #240046 60%, #5a189a 100%);
+  color: #fff;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin-top: 32px;
+}
+
+.footer-banner a {
+  color: #ffd166;
+  text-decoration: underline;
+  margin-left: 6px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.footer-banner a:hover {
+  color: #fff;
+}
+
+/* Footer Main */
+footer {
+  background: #1a1625;
+  padding: 32px 0 16px 0;
+  color: #e0e6ed;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  flex: 1 1 200px;
+  text-align: left;
+}
+
+.footer-left span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-left p {
+  margin: 8px 0 0 0;
+  font-size: 0.95rem;
+  color: #b0b8c1;
+}
+
+.footer-right {
+  flex: 1 1 200px;
+  text-align: right;
+}
+
+.footer-right span {
+  font-weight: 600;
+}
+
+.footer-right a {
+  margin: 0 8px;
+  color: #e0e6ed;
+  text-decoration: none;
+  transition: color 0.2s;
+  vertical-align: middle;
+}
+
+.footer-right a:hover {
+  color: #ffd166;
+}
+
+footer hr {
+  border: none;
+  border-top: 1px solid #232a36;
+  margin: 24px 0;
+}
+
+.footer-copyright {
+  font-size: 0.95rem;
+  color: #b0b8c1;
+  text-align: center;
+}
+
+footer svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
